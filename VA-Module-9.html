@@ -1,0 +1,15 @@
+<h1 id="visual-analytics-module-9---multivariate-analysis">Visual Analytics Module 9 - Multivariate Analysis</h1>
+<p>The five principles of design that I will try to incorporate into my multivariate analysis are:</p>
+<p>Alignment - Aligning the graphic elements to create a sharper and cleaner design.</p>
+<p>Repetition - Repeats specific graphic elements to tie in the overall visualization.</p>
+<p>Contrast - Uses different shades or coloring to highlight specific elements of the visualization.</p>
+<p>Proximity - Displaces certain aspects of the graphic in order to organize or separate the visualization.</p>
+<p>Balance - Distributes elements of the visualization in order to provide structure and neatness.</p>
+<p>I will be using the default dataset from R 'iris' for my multivariate analysis and to answer the question: &quot;Which supplement of Vitamin C increases guinea pig tooth growth the most?&quot;</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
+<span class="kw">ggplot</span>(ToothGrowth, <span class="kw">aes</span>(<span class="dt">x=</span>dose, <span class="dt">y=</span>len, <span class="dt">group=</span>dose)) +<span class="st"> </span><span class="kw">geom_boxplot</span>(<span class="kw">aes</span>(<span class="dt">fill=</span>dose))+<span class="kw">facet_grid</span>(dose~supp)+<span class="kw">scale_fill_gradient2</span>(<span class="dt">high =</span> <span class="st">&quot;red&quot;</span>)+<span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Effects of Orange Juice vs. Vitamin C on Guinea Pig Tooth Growth&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Vitamin C ddosage&quot;</span>,<span class="dt">y =</span> <span class="st">&quot;Tooth Length&quot;</span>)</code></pre>
+<div class="figure">
+<img src="VA-Module-9_files/figure-markdown_github/unnamed-chunk-1-1.png" />
+</div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#ggplot(mtcars, aes(x=mtcars$mpg, y=mtcars$mpg, color=mtcars$gear)) + geom_boxplot()+ labs(title =&quot;Flower Species&#39; affect on Petal Length and Width&quot;, x = &quot;Petal Length&quot;, y = &quot;Petal Width&quot;, color = &quot;Flower Species&quot;)</span></code></pre>
+<p>We can see from the graph above that for smaller doses of Orange Juice compared to Vitamin C, Orange Juice seems to have the largest tooth growth for the guinea pigs. However, at larger doses, it evens out and there is not much of a difference in tooth growth.</p>
